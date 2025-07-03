@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Проекты в экосистеме Monad</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+      background-color: #f4f4f4;
+    }
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      background: white;
+    }
+    th, td {
+      text-align: left;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+    }
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+    tr:hover {background-color: #f1f1f1;}
+    input[type="text"] {
+      width: 100%;
+      padding: 8px;
+      margin-bottom: 10px;
+      border: 1px solid #ccc;
+    }
+  </style>
+  <script>
+    function filterTable() {
+      const input = document.getElementById("searchInput");
+      const filter = input.value.toLowerCase();
+      const table = document.getElementById("projectsTable");
+      const tr = table.getElementsByTagName("tr");
+
+      for (let i = 1; i < tr.length; i++) {
+        let rowVisible = false;
+        const td = tr[i].getElementsByTagName("td");
+        for (let j = 0; j < td.length; j++) {
+          if (td[j]) {
+            if (td[j].textContent.toLowerCase().indexOf(filter) > -1) {
+              rowVisible = true;
+              break;
+            }
+          }
+        }
+        tr[i].style.display = rowVisible ? "" : "none";
+      }
+    }
+  </script>
+</head>
+<body>
+
+<h2>Проекты в экосистеме Monad</h2>
+<input type="text" id="searchInput" onkeyup="filterTable()" placeholder="Поиск по проектам или категориям...">
+
+<table id="projectsTable">
+  <thead>
+    <tr>
+      <th>Категория</th>
+      <th>Проект</th>
+      <th>Описание</th>
+      <th>Ссылка</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr><td>DeFi / DEX</td><td>Bean Exchange</td><td>DEX с perpetual контрактами</td><td><a href="https://perp.bean.exchange" target="_blank">перейти</a></td></tr>
+    <tr><td>DeFi / DEX</td><td>aPriori</td><td>Liquid staking + MEV стратегии</td><td><a href="https://www.apr.io" target="_blank">перейти</a></td></tr>
+    <tr><td>DeFi / DEX</td><td>Mace</td><td>DEX-агрегатор с офчейн-оптимизацией</td><td><a href="https://followin.io/en/feed/16773922" target="_blank">источник</a></td></tr>
+    <tr><td>DeFi / DEX</td><td>Kuru</td><td>Биржа с книгой ордеров (CLOB)</td><td><a href="https://followin.io/en/feed/15452352" target="_blank">источник</a></td></tr>
+
+    <tr><td>Инфраструктура</td><td>Chronicle</td><td>Oracle-сервис</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+    <tr><td>Инфраструктура</td><td>ChainSight</td><td>Блокчейн аналитика</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+    <tr><td>Инфраструктура</td><td>dRPC</td><td>Децентрализованный RPC</td><td><a href="https://onff.ru/14-groundbreaking-projects-joining-the-monad-ecosystem-complete-ecosystem-overview" target="_blank">перейти</a></td></tr>
+    <tr><td>Инфраструктура</td><td>FastLane</td><td>MEV + ERC-4337 инфраструктура</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+
+    <tr><td>Кошельки</td><td>Backpack Wallet</td><td>Мультицепочный Web3-кошелёк</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+    <tr><td>Кошельки</td><td>Atomic Wallet</td><td>DEX + стейкинг</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+    <tr><td>Кошельки</td><td>Bitget Wallet</td><td>Мобильный Web3 кошелёк</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+
+    <tr><td>GameFi / NFT</td><td>Rug Rumble</td><td>Карточная игра с мем-тематикой</td><td><a href="https://followin.io/en/feed/16773922" target="_blank">перейти</a></td></tr>
+    <tr><td>GameFi / NFT</td><td>DRKVRS</td><td>RPG-игра с NFT</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+    <tr><td>GameFi / NFT</td><td>DiscoCats</td><td>NFT-коллекция с DeFi элементами</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+
+    <tr><td>AI / Identity</td><td>Catton AI</td><td>AI-боты и Telegram-игры</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+    <tr><td>AI / Identity</td><td>Anima Protocol</td><td>Soulbound идентичность</td><td><a href="https://www.monad.xyz/ecosystem" target="_blank">монaд</a></td></tr>
+    <tr><td>AI / Identity</td><td>aiCraft.fun</td><td>AI launchpad и токенизация агентов</td><td><a href="https://nftevening.com/top-10-monad-projects-airdrops" target="_blank">перейти</a></td></tr>
+  </tbody>
+</table>
+
+</body>
+</html>
